@@ -1,4 +1,4 @@
-import {setup} from 'axios';
+import {setup} from 'axios-cache-adapter';
 
 const api = setup({
     baseUrl: "https://jsonplaceholder.typicode.com",
