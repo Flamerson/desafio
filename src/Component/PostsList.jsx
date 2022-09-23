@@ -1,32 +1,35 @@
-import React, {useState , useEffect} from 'react';
-import api from '../Services/api';
+import React, {useState} from 'react';
+import axios from 'axios';
 import {ListPosts , Post, TextBody, TextTittle} from '../Styled/Styled';
 
 export default function PostsList(){
     const [posts , setPosts] = useState([]);
 
     //solicitação dos posts, aqui está sem otimização ainda, é preciso utilizar um sistema de otimização.
-    useEffect(()=>{
-        api
-            .get("https://jsonplaceholder.typicode.com/posts")
-            .then(res => setPosts(res.data))
-            .catch(err => console.log(`Error: ${err}`));
-    }, [posts])
+    async function getPosts() {
+        try {
+            const response = await axios.get('https://jsonplaceholder.typicode.com/posts');
+            if(response){
+                setPosts(response.data);
+            }
+        }
+        catch (error) {
+            console.log(error);
+        }
+    }
+
+    getPosts();
 
     //Renderização dos posts já está ocorrendo mas sem tratamento , passando a trabalhar em tratar os posts , para começar a estilizar.
     return(
         <div>
             <ListPosts> 
-                <Post>
-                    <TextTittle>testando o texto</TextTittle>
-                    <TextBody>Testando o corpo</TextBody>
-                </Post>
                 {
                     posts.map((posts, key) => {
                         return(
-                            <Post>
-                                <TextTittle>Tittle</TextTittle>
-                                <TextBody>Body</TextBody>
+                            <Post key={posts.id}>
+                                <TextTittle>{posts.title}</TextTittle>
+                                <TextBody>{posts.body}</TextBody>
                             </Post>
                         );
                     })
