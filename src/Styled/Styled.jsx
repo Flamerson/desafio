@@ -21,6 +21,10 @@ export const BodyPosts = styled.div`
         font-size: 24px;
         margin-top: 15px;
     }
+    h2{
+        font-size: 24px;
+        margin: 25px;
+    }
 `;
 
 // PostBody
@@ -175,3 +179,32 @@ export const Btndel = styled.button`
     margin-left: 15px;
 `;
 // deletecomponent end
+
+// details
+export const DetailsDiv = styled.div`
+    width: 100%;
+    text-align: center;
+    margin: 25px 0;
+    h1{
+        font-size: 26px;
+    }
+`;
+export const CommentsBody = styled.div`
+    width: 70% ;
+    min-height: 10vh ;
+    h3{
+        text-align: center;
+        margin-bottom: 25px;
+    }
+`;
+export const CommentsDiv = styled.div`
+    width: 100%;
+    min-height: 7vh;
+    border-bottom: 1px solid #e7e7e7;
+    margin-bottom: 15px;
+    padding: 5px 15px;
+    h4{
+        margin-bottom: 5px;
+    }
+`;
+//details end

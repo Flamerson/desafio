@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import api from "../Services/Api";
 import {useParams} from "react-router-dom";
+import { CommentsBody, CommentsDiv } from "../Styled/Styled";
 
 export default function PostComments(){
 
@@ -15,18 +16,19 @@ export default function PostComments(){
     }, [])
 
     return(
-        <>
+        <CommentsBody>
+            <h3>Comentarios</h3>
             {
-                comments.map((com,key) => {
+                comments.map((com) => {
                     return(
-                        <div key={key}>
-                            <h3>{com.name}</h3>
+                        <CommentsDiv key={com.id}>
+                            <h4>{com.name}</h4>
                             <h4>{com.email}</h4>
                             <p>{com.body}</p>
-                        </div>
+                        </CommentsDiv>
                     )
                 })
             }
-        </>
+        </CommentsBody>
     )
 }

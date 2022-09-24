@@ -5,6 +5,7 @@ import api from '../Services/Api';
 import PostDetails from '../Component/PostDetails';
 import PostComments from '../Component/PostComments';
 import MorePosts from '../Component/MorePosts';
+import { BodyPosts, DetailsDiv } from '../Styled/Styled';
 
 export default function Details(){
 
@@ -18,12 +19,16 @@ export default function Details(){
     },[])
 
     return(
-        <>
+        <BodyPosts>
+            <DetailsDiv>
+                <h1>{user.username}</h1>
+                <p>{user.name}</p>
+                <p>{user.email}</p>
+            </DetailsDiv>
             <PostDetails/>
-            <h1>Autor: {user.username}</h1>
             <PostComments/>
-            <Link to={"/"}>Link</Link>
+            <h2>Mais posts de {user.username}</h2>
             <MorePosts/>
-        </>
+        </BodyPosts>
     )
 }
