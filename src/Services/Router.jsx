@@ -14,7 +14,7 @@ const router = createBrowserRouter([
         errorElement: <NotFound/>,
     },
     {
-        path: '/update/:userId',
+        path: '/update/:postId',
         element: (<UpdatePost/>),
     },
     {

@@ -4,6 +4,7 @@ import api from '../Services/Api';
 
 import PostDetails from '../Component/PostDetails';
 import PostComments from '../Component/PostComments';
+import MorePosts from '../Component/MorePosts';
 
 export default function Details(){
 
@@ -22,6 +23,7 @@ export default function Details(){
             <h1>Autor: {user.username}</h1>
             <PostComments/>
             <Link to={"/"}>Link</Link>
+            <MorePosts/>
         </>
     )
 }

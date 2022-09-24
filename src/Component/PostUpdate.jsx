@@ -7,11 +7,11 @@ export default function PostUpdate(){
     const [title, setTitle] = useState("");
     const [body, setBody] = useState("");
 
-    let {userId} = useParams();
+    let {postId} = useParams();
 
     const atualizarPost = () => {
         if(!!title || !!body){
-            api.put(`/posts/${userId}`, {
+            api.put(`/posts/${postId}`, {
                 title: title,
                 body: body
             })

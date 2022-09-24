@@ -24,24 +24,29 @@ export default function PostsList(){
 
     //Renderização dos posts já está ocorrendo mas sem tratamento , passando a trabalhar em tratar os posts , para começar a estilizar.
     return(
-        <div>
+        <>
             <ListPosts> 
                 {
                     posts.map((posts) => {
                         return(
-                            <Post key={posts.id}>
-                                <TextTittle>{posts.title}</TextTittle>
-                                <TextBody>{posts.body}</TextBody>
-                                <Link to={`/update/${posts.id}`}>Link</Link>
-                                <form onSubmit={e => {e.preventDefault(); deletePost(posts.id)}}>
-                                    <button type='submit'>delete</button>
-                                </form>
-                                <Link to={`/details/${posts.userId}/${posts.id}`}>Details</Link>
-                            </Post>
+                            <Link to={`/details/${posts.userId}/${posts.id}`}>
+                                <Post key={posts.id}>
+                                    <div>
+                                    <TextTittle>{posts.title}</TextTittle>
+                                    <TextBody>{posts.body}</TextBody>
+                                    </div>
+                                    <div>
+                                    <form onSubmit={e => {e.preventDefault(); deletePost(posts.id)}}>
+                                        <button type='submit'>delete</button>
+                                    </form>
+                                    <Link to={`/update/${posts.id}`}>Atualizar</Link>
+                                    </div>
+                                </Post>
+                            </Link>
                         );
                     })
                 }
             </ListPosts>
-        </div>
+        </>
     );
 };
