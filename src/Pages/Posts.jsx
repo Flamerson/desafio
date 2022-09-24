@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 
 //Components imports
 import PostsList from '../Component/PostsList';
