@@ -1,4 +1,5 @@
 import React , {useState,useEffect} from "react";
+import { ListPosts, Post } from "../Styled/Styled";
 
 import api from "../Services/Api";
 import {useParams} from "react-router-dom";
@@ -14,11 +15,15 @@ export default function PostDetails(){
         .catch(err => console.error(err));
     }, [])
 
-
+    //Por enquanto só está mostrando o post , mas no futuro pode adicionar mais campos. como deletar aqui.
     return(
-        <>
-            <h1>Title: {post.title}</h1>
-            <p>Body: {post.body}</p>
-        </>
+        <ListPosts>
+            <Post>
+                <div>
+                    <h1>{post.title}</h1>
+                    <p>{post.body}</p>
+                </div>
+            </Post>
+        </ListPosts>
     )
 }

@@ -23,8 +23,8 @@ export default function PostUpdate(){
     return(
         <>
             <FormPost onSubmit={e => {e.preventDefault(); atualizarPost()}}>
-                <InputTitle value={title} onChange={e => setTitle(e.target.value)} />
-                <InputPost value={body} onChange={e => setBody(e.target.value)} />
+                <InputTitle placeholder='Titulo novo' value={title} onChange={e => setTitle(e.target.value)} />
+                <InputPost placeholder='Corpo novo' value={body} onChange={e => setBody(e.target.value)} />
                 <ButtonPost>Atualizar</ButtonPost>
             </FormPost>
         </>

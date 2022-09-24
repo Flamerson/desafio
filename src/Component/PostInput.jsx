@@ -1,6 +1,5 @@
 import React, { useState} from "react";
-import {InputTitle, InputPost, ButtonPost, FormPost} from "../Styled/Styled";
-import SendIcon from '@mui/icons-material/Send';
+import {InputTitle, InputPost, ButtonPost, FormPost, TextForm} from "../Styled/Styled";
 import api from "../Services/Api";
 
 export default function PostInput(){
@@ -22,10 +21,11 @@ export default function PostInput(){
 
     return(
         <>
+            <TextForm>Adicionar nova mensagem</TextForm>
             <FormPost onSubmit={e => {e.preventDefault(); cadastrarPost();}}>
-                <InputTitle value={title} onChange={event => setTitle(event.target.value)}/>
-                <InputPost value={body} onChange={event => setBody(event.target.value)}/>
-                <ButtonPost type="submit"><SendIcon/></ButtonPost>
+                <InputTitle placeholder="Titulo" value={title} onChange={event => setTitle(event.target.value)}/>
+                <InputPost placeholder="Corpo" rows={2} value={body} onChange={event => setBody(event.target.value)}/>
+                <ButtonPost type="submit">Novo post</ButtonPost>
             </FormPost>
         </>
     );
