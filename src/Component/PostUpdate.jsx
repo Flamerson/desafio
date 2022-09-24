@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {InputTitle, InputPost, ButtonPost, FormPost} from "../Styled/Styled";
 import api from '../Services/Api';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 export default function PostUpdate(){
     const [title, setTitle] = useState("");
@@ -9,13 +9,15 @@ export default function PostUpdate(){
 
     let {postId} = useParams();
 
+    const navigate = useNavigate();
+
     const atualizarPost = () => {
         if(!!title || !!body){
             api.put(`/posts/${postId}`, {
                 title: title,
                 body: body
             })
-            .then(res => {alert(`title: ${res.data.title} body: ${res.data.body}`); if(res){setTitle(""); setBody("")}})
+            .then(res => {alert(`title: ${res.data.title} body: ${res.data.body}`); if(res){setTitle(""); setBody("")}; navigate("/")})
             .catch(err => console.log(err))
         }
     }
