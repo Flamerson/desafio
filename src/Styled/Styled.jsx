@@ -152,6 +152,10 @@ export const ButtonPost = styled.button`
         width: 75px;
         height: 29px;
         font-size: 12px;
+        :hover{
+            width: 80px;
+            height: 32px;
+        }
     }
 `;
 // PostInput end.
@@ -224,11 +228,16 @@ export const Btndel = styled.button`
 
 // details
 export const DetailsDiv = styled.div`
-    width: 100%;
-    text-align: center;
+    width: 80%;
+    display: flex;
+    text-align: start;
+    align-items: center;
     margin: 25px 0;
     h1{
         font-size: 26px;
+    }
+    a{
+        margin-right: 15px;
     }
 `;
 export const CommentsBody = styled.div`

@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {useParams} from 'react-router-dom';
+import {Link, useParams} from 'react-router-dom';
 import api from '../Services/Api';
 
 import PostDetails from '../Component/PostDetails';
@@ -21,9 +21,14 @@ export default function Details(){
     return(
         <BodyPosts>
             <DetailsDiv>
-                <h1>{user.username}</h1>
-                <p>{user.name}</p>
-                <p>{user.email}</p>
+                <div>
+                    <Link to={"/"}>Inicio</Link>
+                </div>
+                <div>
+                    <h1>{user.username}</h1>
+                    <p>{user.name}</p>
+                    <p>{user.email}</p>
+                </div>
             </DetailsDiv>
             <PostDetails/>
             <PostComments/>
