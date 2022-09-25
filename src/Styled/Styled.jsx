@@ -41,7 +41,7 @@ export const ListPosts = styled.ul`
 
 export const Post = styled.li`
     width: 100%;
-    height: 15vh;
+    min-height: 15vh;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -58,7 +58,17 @@ export const Post = styled.li`
             margin-top: 10px;
         }
     }
-    
+    @media(max-width:767px){
+        div{
+            h3{
+                font-size: 20px;
+                margin-bottom: 0;
+            }
+            p{
+                font-size: 14px;
+            }
+        }
+    }
 `;
 
 export const TextTittle = styled.h3`
@@ -108,6 +118,17 @@ export const InputTitle = styled.input`
     border: 2px solid #000;
     border-radius: 9px;
     outline: none;
+    /* media para tablet*/
+    @media (max-width:1023px){
+        width: 280px;
+    }
+    @media (max-width: 767px){
+        width: 110px;
+        font-size: 14px;
+        padding: 5px;
+        margin: 5px;
+    }
+    
 `;
 export const InputPost = styled(InputTitle)`
 `;
@@ -126,6 +147,11 @@ export const ButtonPost = styled.button`
         width: 110px;
         height: 50px;
         margin-left: 0;
+    }
+    @media (max-width: 767px){
+        width: 75px;
+        height: 29px;
+        font-size: 12px;
     }
 `;
 // PostInput end.
@@ -166,6 +192,22 @@ export const DeletePop = styled.div`
                 width: 110px;
                 height: 55px;
                 margin: -5px 0;
+            }
+        }
+    }
+    @media(max-width:767px){
+        width: 300px;
+        min-height: 100px;
+        margin-left: 50px;
+        p{
+            font-size: 14px;
+        }
+        div{
+
+            button{
+                width: 75px;
+                height: 35px;
+                font-size: 14px;
             }
         }
     }
