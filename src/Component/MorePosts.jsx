@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import api from "../Services/Api";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { ListPosts, Post } from "../Styled/Styled";
 
 export default function MorePosts(){
@@ -22,8 +22,8 @@ export default function MorePosts(){
                     return(
                         <Post key={key}>
                             <div>
-                                <h3>title: {post.title}</h3>
-                                <p>body: {post.body}</p>
+                                <h3>{post.title}</h3>
+                                <p>{post.body}</p>
                             </div>
                         </Post>
                     )

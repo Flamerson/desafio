@@ -208,3 +208,21 @@ export const CommentsDiv = styled.div`
     }
 `;
 //details end
+
+//404page
+export const NotFoundDiv = styled.div`
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 50px;
+    a{
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+        margin-top: 15px;
+    }
+`;
+//404pageNotfound

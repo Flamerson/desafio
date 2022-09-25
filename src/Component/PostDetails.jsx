@@ -15,7 +15,8 @@ export default function PostDetails(){
         .catch(err => console.error(err));
     }, [])
 
-    //Por enquanto só está mostrando o post , mas no futuro pode adicionar mais campos. como deletar aqui.
+    //Por enquanto só está mostrando o post, mas no futuro pode adicionar mais campos. como deletar aqui.
+    //O component está preparado para receber modificações.
     return(
         <ListPosts>
             <Post>

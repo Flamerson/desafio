@@ -12,20 +12,12 @@ export default function PostsList(){
     const [posts , setPosts] = useState([]);
     const [disp, setDisp] = useState("none");
 
-    //solicitação dos posts, aqui está sem otimização ainda, é preciso utilizar um sistema de otimização.
+    //solicitação dos posts, está mais otimizado.
     useEffect(()=> {
         api.get('/posts')
         .then(res => {setPosts(res.data)})
         .catch(err => console.log(err));
     }, [])
-
-    const deletePost = (id) => {
-        if(window.confirm("Você deseja realmente deletar o post?")){
-            api.delete(`/posts/${id}`)
-            .then(() => alert(`O post ${id} foi deletado`))
-            .catch(err => console.log(err))
-        }
-    }
 
     const PopupDel = (id) => (
         <Popup trigger={<button><DeleteIcon/></button>} position="left">
@@ -34,7 +26,7 @@ export default function PostsList(){
                 <p>Deseja realmente excluir o post?</p>
                 <div>
                     <button onClick={
-                        del => {
+                        () => {
                             api.delete(`/posts/${id.props}`)
                             .then(() => setDisp(""))
                             .catch(err => console.log(err));
@@ -47,9 +39,7 @@ export default function PostsList(){
           )}
         </Popup>
       );
-    
 
-    //Renderização dos posts já está ocorrendo mas sem tratamento , passando a trabalhar em tratar os posts , para começar a estilizar.
     return(
         <>
             <Stack sx={{ width: '100%', display: disp, transition: "0.2s"}} spacing={2}>

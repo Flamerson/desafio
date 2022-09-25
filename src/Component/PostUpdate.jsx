@@ -8,7 +8,6 @@ export default function PostUpdate(){
     const [body, setBody] = useState("");
 
     let {postId} = useParams();
-
     const navigate = useNavigate();
 
     const atualizarPost = () => {
@@ -17,7 +16,7 @@ export default function PostUpdate(){
                 title: title,
                 body: body
             })
-            .then(res => {alert(`title: ${res.data.title} body: ${res.data.body}`); if(res){setTitle(""); setBody("")}; navigate("/")})
+            .then(res => {alert(`Novo Titulo: ${res.data.title}  Novo corpo: ${res.data.body}`); if(res){setTitle(""); setBody("")}; navigate("/")})
             .catch(err => console.log(err))
         }
     }
